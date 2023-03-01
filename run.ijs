@@ -26,3 +26,4 @@ covtest=:sxty;sytsxdn;sxty-sytsxdn
 ]y_bah=:(+/ % #)(}."1 test3)
 num=:+/((1+i.#test3)-x_bah)*((,}."1 test3)-y_bah)
 
+NB. for some reason bta1 is giving me bad values for different datasets, y_hat isnt working for other datasets, gotta figure out what is going on
