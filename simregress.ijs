@@ -12,11 +12,9 @@ simregress=: 3 : 0
 NB. x/y bar
 x_bar=:(+/ % #)(1+i.#y)
 y_bar=:(+/ % #)(,}."1 y)
-NB. numerator/denominator of the beta1 function(above)
-num=:+/((1+i.#y)-x_bar)*((,}."1 y)-y_bar)
-denom=: +/((1+i.#y)-x_bar)^2
 NB. beta 0/1 values, formulas above
-bt1=:num%denom
+NB. variance and covariance formulas defined in utils.ijs
+bt1=:((1+i.#y) cov (,}."1 y))%(var (1+i.#y))
 bt0=: y_bar-bt1*x_bar
 NB. y hat and then stitching y hat with the time data
 y_hat=:bt0+bt1*(1+i.#y)
