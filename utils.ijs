@@ -35,4 +35,23 @@ NB. percent given is the variation in the y values accounted for by the x values
 rsq=: 4 : 0
 1-(+/(y-x)^2)%(+/(y-((+/ % #)y))^2)
 )
+
 NB. END OF CHECKING FIT UTILS BLOCK
+
+
+
+NB. START OF MISC STATS BLOCK
+
+NB. returns pct change from one data point to the next
+chg=: 4 : 0
+((y-x)%x)*100
+)
+
+NB. percent change between data points
+NB. returns array of percentage points
+NB. figure out how _ ".S:0 works
+pctchg=: monad define
+2 chg/\ _ ".S:0 {:"1 y
+)
+
+NB. END OF MISC STATS BLOCK
